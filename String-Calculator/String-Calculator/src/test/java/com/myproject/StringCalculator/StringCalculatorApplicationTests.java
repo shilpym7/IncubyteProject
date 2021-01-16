@@ -33,5 +33,10 @@ class StringCalculatorApplicationTests {
 		StringCalculator s=new StringCalculator();
 		assertEquals(s.Add("1,45\n6,8"),60);
 	}
+	@Test
+	void testAddForHandlingDefaultDelimiter() {
+		StringCalculator s=new StringCalculator();
+		assertEquals(s.Add("//;\n1;45;6;8"),60);
+	}
 }
 
