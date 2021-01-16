@@ -28,5 +28,10 @@ class StringCalculatorApplicationTests {
 		StringCalculator s=new StringCalculator();
 		assertEquals(s.Add("1,2,67,45,887,5"),1007);
 	}
+	@Test
+	void testAddForHandlingNewLinesBtwnNums() {
+		StringCalculator s=new StringCalculator();
+		assertEquals(s.Add("1,45\n6,8"),60);
+	}
 }
 
