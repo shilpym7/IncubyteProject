@@ -1,8 +1,10 @@
 package com.myproject.StringCalculator;
 
+import com.myproject.StringCalculator.ExceptionHandling.NegativeNumException;
+
 public class StringCalculator {
 
-     public int Add(String numbers)
+     public int Add(String numbers) throws NegativeNumException
 		{
 			
 			if(numbers.isEmpty() || numbers.equals(""))
@@ -20,9 +22,19 @@ public class StringCalculator {
 			}
 			}
 			String[] num=newstr.split(delimiter);
-
+             
 			for(String str:num)
-				sum+=Integer.parseInt(str);
+			{
+				try {
+				if(Integer.parseInt(str)>0)
+					sum+=Integer.parseInt(str);
+				}
+				catch(Exception ex)
+				{
+					throw new NegativeNumException(num);
+				}
+		}
+				
 			
 			return sum;
 		}
