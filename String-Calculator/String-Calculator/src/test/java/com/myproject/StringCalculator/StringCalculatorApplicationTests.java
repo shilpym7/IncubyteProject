@@ -23,6 +23,10 @@ class StringCalculatorApplicationTests {
 		StringCalculator s=new StringCalculator();
 		assertEquals(s.Add("1,2"),3);
 	}
-	
+	@Test
+	void testAddForUnknownNums() {
+		StringCalculator s=new StringCalculator();
+		assertEquals(s.Add("1,2,67,45,887,5"),1007);
+	}
 }
 
